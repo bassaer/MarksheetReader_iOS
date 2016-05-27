@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarksheetReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-49-ls1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-eU-k6R">
+                                <rect key="frame" x="276" y="544" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="SbT-ru-weC"/>
+                                    <constraint firstAttribute="height" constant="48" id="Teb-Ai-ukC"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="circle_button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CK6-uD-WeY"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="GLR-rh-ebO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1jq-eU-k6R" secondAttribute="bottom" constant="8" id="Gfg-lh-n7o"/>
+                            <constraint firstItem="1jq-eU-k6R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VzR-zF-0CG"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="centerX" secondItem="1jq-eU-k6R" secondAttribute="centerX" id="oUk-Wb-DiP"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p9e-x9-lO0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Tfc-49-ls1" id="Dmu-ro-d97"/>
+                        <outlet property="shutterButton" destination="1jq-eU-k6R" id="I40-xT-ZJs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle_button" width="292" height="292"/>
+    </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477D44890EECD41610AF1F29 /* libPods-MarksheetReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */; };
 		A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */; };
 		A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278D1CF6BAD400336DB4 /* ViewController.swift */; };
 		A7A427911CF6BAD400336DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A4278F1CF6BAD400336DB4 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		A7A427961CF6BAD400336DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A427941CF6BAD400336DB4 /* LaunchScreen.storyboard */; };
 		A7A427A11CF6BAD400336DB4 /* MarksheetReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A427A01CF6BAD400336DB4 /* MarksheetReaderTests.swift */; };
 		A7A427AC1CF6BAD400336DB4 /* MarksheetReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A427AB1CF6BAD400336DB4 /* MarksheetReaderUITests.swift */; };
+		A7A427BA1CF70A8300336DB4 /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A427B91CF70A8300336DB4 /* CameraUtil.swift */; };
+		A7A427BC1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A427BB1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml */; };
+		A7A427C31CF822CC00336DB4 /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A427C21CF822CC00336DB4 /* Detector.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.debug.xcconfig"; sourceTree = "<group>"; };
+		7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.release.xcconfig"; sourceTree = "<group>"; };
+		A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarksheetReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7696D2C1CF8599300EC3F14 /* opencv2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv2; path = Pods/OpenCV/opencv2.framework/Versions/A/opencv2; sourceTree = "<group>"; };
+		A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A7A427881CF6BAD400336DB4 /* MarksheetReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarksheetReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A4278D1CF6BAD400336DB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,11 @@
 		A7A427A71CF6BAD400336DB4 /* MarksheetReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarksheetReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A427AB1CF6BAD400336DB4 /* MarksheetReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksheetReaderUITests.swift; sourceTree = "<group>"; };
 		A7A427AD1CF6BAD400336DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A427B91CF70A8300336DB4 /* CameraUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
+		A7A427BB1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
+		A7A427C21CF822CC00336DB4 /* Detector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Detector.mm; sourceTree = "<group>"; };
+		A7A427C51CF8233400336DB4 /* MarksheetReader-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarksheetReader-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7A427C61CF8577100336DB4 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Pods/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				477D44890EECD41610AF1F29 /* libPods-MarksheetReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		335F888E145D63C3575045D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */,
+				A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */,
+				A7696D2C1CF8599300EC3F14 /* opencv2 */,
+				A7A427C61CF8577100336DB4 /* opencv2.framework */,
+				A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7A4277F1CF6BAD300336DB4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				A7A4279F1CF6BAD400336DB4 /* MarksheetReaderTests */,
 				A7A427AA1CF6BAD400336DB4 /* MarksheetReaderUITests */,
 				A7A427891CF6BAD400336DB4 /* Products */,
+				EE4B1642BC32C1715E407D7B /* Pods */,
+				335F888E145D63C3575045D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +127,16 @@
 		A7A4278A1CF6BAD400336DB4 /* MarksheetReader */ = {
 			isa = PBXGroup;
 			children = (
+				A7A427C51CF8233400336DB4 /* MarksheetReader-Bridging-Header.h */,
+				A7A427BB1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml */,
 				A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */,
 				A7A4278D1CF6BAD400336DB4 /* ViewController.swift */,
 				A7A4278F1CF6BAD400336DB4 /* Main.storyboard */,
 				A7A427921CF6BAD400336DB4 /* Assets.xcassets */,
 				A7A427941CF6BAD400336DB4 /* LaunchScreen.storyboard */,
 				A7A427971CF6BAD400336DB4 /* Info.plist */,
+				A7A427B91CF70A8300336DB4 /* CameraUtil.swift */,
+				A7A427C21CF822CC00336DB4 /* Detector.mm */,
 			);
 			path = MarksheetReader;
 			sourceTree = "<group>";
@@ -125,6 +159,15 @@
 			path = MarksheetReaderUITests;
 			sourceTree = "<group>";
 		};
+		EE4B1642BC32C1715E407D7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */,
+				7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A427B01CF6BAD400336DB4 /* Build configuration list for PBXNativeTarget "MarksheetReader" */;
 			buildPhases = (
+				2C3DC415CCF26F73D4637B31 /* 📦 Check Pods Manifest.lock */,
 				A7A427841CF6BAD400336DB4 /* Sources */,
 				A7A427851CF6BAD400336DB4 /* Frameworks */,
 				A7A427861CF6BAD400336DB4 /* Resources */,
+				DA3E38528F0A2A2B01EBAEC4 /* 📦 Embed Pods Frameworks */,
+				B25F05EBBAFC9A3F8A334269 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +239,7 @@
 				TargetAttributes = {
 					A7A427871CF6BAD400336DB4 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5G8V8GN7U6;
 					};
 					A7A4279B1CF6BAD400336DB4 = {
 						CreatedOnToolsVersion = 7.3;
@@ -231,6 +278,7 @@
 			files = (
 				A7A427961CF6BAD400336DB4 /* LaunchScreen.storyboard in Resources */,
 				A7A427931CF6BAD400336DB4 /* Assets.xcassets in Resources */,
+				A7A427BC1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml in Resources */,
 				A7A427911CF6BAD400336DB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +299,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C3DC415CCF26F73D4637B31 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B25F05EBBAFC9A3F8A334269 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA3E38528F0A2A2B01EBAEC4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7A427841CF6BAD400336DB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A427BA1CF70A8300336DB4 /* CameraUtil.swift in Sources */,
 				A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */,
 				A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */,
+				A7A427C31CF822CC00336DB4 /* Detector.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,23 +497,50 @@
 		};
 		A7A427B11CF6BAD400336DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV",
+				);
 				INFOPLIST_FILE = MarksheetReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV/opencv2.framework/Versions/A",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.oneblock.MarksheetReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarksheetReader/MarksheetReader-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A7A427B21CF6BAD400336DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV",
+				);
 				INFOPLIST_FILE = MarksheetReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OpenCV/opencv2.framework/Versions/A",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.oneblock.MarksheetReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarksheetReader/MarksheetReader-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,6 +609,7 @@
 				A7A427B21CF6BAD400336DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7A427B31CF6BAD400336DB4 /* Build configuration list for PBXNativeTarget "MarksheetReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +618,7 @@
 				A7A427B51CF6BAD400336DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7A427B61CF6BAD400336DB4 /* Build configuration list for PBXNativeTarget "MarksheetReaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +627,7 @@
 				A7A427B81CF6BAD400336DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
