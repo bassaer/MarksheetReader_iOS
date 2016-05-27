@@ -9,6 +9,7 @@
 #import "MarksheetReader-Bridging-Header.h"
 #import <opencv2/opencv.hpp>
 #import <opencv2/highgui/ios.h>
+//#import <opencv2/highgui/highgui.hpp>
 
 @interface Detector()
 {
@@ -40,6 +41,8 @@
     CGFloat rows = image.size.height;
     
     cv::Mat mat(rows, cols, CV_8UC4);
+    cv::Mat gray_img;
+    cv::Mat adaptive_img;
     
     CGContextRef contextRef = CGBitmapContextCreate(
                                                     mat.data,
@@ -53,6 +56,14 @@
     
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
     CGContextRelease(contextRef);
+    
+    cv::cvtColor(mat, gray_img, CV_BGR2GRAY);
+    cv::adaptiveThreshold(gray_img, adaptive_img, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 7, 8);
+    
+    
+    //cvAdaptiveThreshold(&gray_img, &adaptive_img, 255);
+    
+    /*
     
     //顔検出
     std::vector<cv::Rect> faces;
@@ -68,8 +79,12 @@
         radius = cv::saturate_cast<int>((r->width + r->height) / 2);
         cv::circle(mat, center, radius, cv::Scalar(80,80,255), 3, 8, 0);
     }
-    
+     
     UIImage *resultImage = MatToUIImage(mat);
+     
+    */
+    
+    UIImage *resultImage = MatToUIImage(adaptive_img);
     
     return resultImage;
 }

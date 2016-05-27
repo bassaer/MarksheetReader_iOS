@@ -20,7 +20,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     let detector = Detector()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,9 +92,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func captureOutput(caputreOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!){
         dispatch_sync(dispatch_get_main_queue(), {
-            let image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
-            let faceImage = self.detector.recognizeFace(image)
-            self.imageView.image = faceImage
+            var image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
+            if self.shutterButton.highlighted {
+                image = self.detector.recognizeFace(image)
+            }
+            self.imageView.image = image
         })
     }
  
