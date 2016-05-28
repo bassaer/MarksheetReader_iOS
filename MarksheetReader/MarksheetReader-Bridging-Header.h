@@ -9,5 +9,5 @@
 
 - (id)init;
 - (UIImage *)recognizeFace:(UIImage *)image;
-
+- (UIImage *)matchImage:(UIImage *)cameraImage templateImage:(UIImage *)templateImage;
 @end

@@ -19,6 +19,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var myOutput : AVCaptureVideoDataOutput!
     
     let detector = Detector()
+    let patternImage = UIImage(named: "pattern")
+    let patternImage2 = UIImage(named: "pattern_part1_2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +96,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         dispatch_sync(dispatch_get_main_queue(), {
             var image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
             if self.shutterButton.highlighted {
-                image = self.detector.recognizeFace(image)
+                //image = self.detector.recognizeFace(image)
+                image = self.detector.matchImage(image, templateImage: self.patternImage2)
             }
             self.imageView.image = image
         })
