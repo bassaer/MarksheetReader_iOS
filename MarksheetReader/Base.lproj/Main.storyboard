@@ -23,20 +23,20 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-eU-k6R">
                                 <rect key="frame" x="276" y="544" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="SbT-ru-weC"/>
-                                    <constraint firstAttribute="height" constant="48" id="Teb-Ai-ukC"/>
+                                    <constraint firstAttribute="height" constant="48" id="RWS-qI-U04"/>
+                                    <constraint firstAttribute="width" constant="48" id="ead-w1-q5J"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="circle_button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Tfc-49-ls1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CK6-uD-WeY"/>
-                            <constraint firstItem="Tfc-49-ls1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="GLR-rh-ebO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1jq-eU-k6R" secondAttribute="bottom" constant="8" id="Gfg-lh-n7o"/>
-                            <constraint firstItem="1jq-eU-k6R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VzR-zF-0CG"/>
-                            <constraint firstItem="Tfc-49-ls1" firstAttribute="centerX" secondItem="1jq-eU-k6R" secondAttribute="centerX" id="oUk-Wb-DiP"/>
-                            <constraint firstItem="Tfc-49-ls1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p9e-x9-lO0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1jq-eU-k6R" secondAttribute="bottom" constant="8" symbolic="YES" id="KnO-EL-dUb"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Y3l-4c-4c4"/>
+                            <constraint firstAttribute="trailing" secondItem="Tfc-49-ls1" secondAttribute="trailing" id="n3V-y3-AIM"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qBX-KT-sbY"/>
+                            <constraint firstItem="Tfc-49-ls1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="taD-Xt-NMB"/>
+                            <constraint firstItem="1jq-eU-k6R" firstAttribute="centerX" secondItem="Tfc-49-ls1" secondAttribute="centerX" id="udT-ks-ReQ"/>
                         </constraints>
                     </view>
                     <connections>

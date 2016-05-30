@@ -17,6 +17,7 @@
 }
 - (cv::Mat)convertUIImageToMat:(UIImage *)image;
 - (cv::Mat)getBinaryImage:(cv::Mat) mat;
+- (cv::Mat)changeOrientation:(cv::Mat) mat angle:(double)angle;
 @end
 
 @implementation Detector: NSObject
@@ -94,27 +95,45 @@
 
 - (cv::Mat)getBinaryImage:(cv::Mat) mat {
     cv::cvtColor(mat, mat, CV_BGR2GRAY);
-    cv::adaptiveThreshold(mat, mat, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 7, 8);
+    //cv::adaptiveThreshold(mat, mat, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 7, 8);
     
     return mat;
 }
 
+- (cv::Mat)changeOrientation:(cv::Mat) mat {
+    
+    cv::Mat result(mat.rows,mat.cols, CV_8UC4);
+    cv::transpose(mat, result);
+    
+    return result;
+}
+
 - (UIImage *)matchImage:(UIImage *)cameraImage templateImage:(UIImage *)templateImage {
+    
+    
     
     cv::Mat camera = [self getBinaryImage:[self convertUIImageToMat:cameraImage]];
     cv::Mat tmpImg = [self getBinaryImage:[self convertUIImageToMat:templateImage]];
     
     cv::Mat resultImg;
     
-    cv::matchTemplate(camera, tmpImg, resultImg, cv::TM_CCORR);
+    //画像を左へ９０度回転
+    camera = [self changeOrientation:camera];
+    
+    
+    cv::matchTemplate(camera, tmpImg, resultImg, cv::TM_CCORR_NORMED);
     
     double min_val, max_val;
     cv::Point min_loc, max_loc;
     cv::minMaxLoc(resultImg, &min_val, &max_val, &min_loc, &max_loc);
+    resultImg = [self convertUIImageToMat:cameraImage];
+    resultImg = [self changeOrientation:resultImg];
+    cv::rectangle(resultImg , max_loc, cv::Point(max_loc.x + tmpImg.cols, max_loc.y + tmpImg.rows), CV_RGB(0,255,0), 2);
     
-    cv::rectangle(camera, max_loc, cv::Point(max_loc.x + tmpImg.cols, max_loc.y + tmpImg.rows), CV_RGB(0,255,0), 2);
+    resultImg = [self changeOrientation:resultImg];
     
-    return MatToUIImage(camera);
+    return MatToUIImage(resultImg);
+    
 }
 
 @end
