@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		477D44890EECD41610AF1F29 /* libPods-MarksheetReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */; };
 		A70F498D1CFFFC790062DBB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */; };
+		A70F498F1D02C6600062DBB8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F498E1D02C6600062DBB8 /* ChartViewController.swift */; };
 		A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */; };
 		A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278D1CF6BAD400336DB4 /* ViewController.swift */; };
 		A7A427911CF6BAD400336DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A4278F1CF6BAD400336DB4 /* Main.storyboard */; };
@@ -19,6 +19,7 @@
 		A7A427BA1CF70A8300336DB4 /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A427B91CF70A8300336DB4 /* CameraUtil.swift */; };
 		A7A427BC1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A427BB1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml */; };
 		A7A427C31CF822CC00336DB4 /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A427C21CF822CC00336DB4 /* Detector.mm */; };
+		E526FCED82F6931ABD222FE7 /* Pods_MarksheetReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E10EAE0CCBD4D717E4E890 /* Pods_MarksheetReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42E10EAE0CCBD4D717E4E890 /* Pods_MarksheetReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarksheetReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.debug.xcconfig"; sourceTree = "<group>"; };
 		7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.release.xcconfig"; sourceTree = "<group>"; };
-		A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarksheetReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70F498E1D02C6600062DBB8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A7696D2C1CF8599300EC3F14 /* opencv2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv2; path = Pods/OpenCV/opencv2.framework/Versions/A/opencv2; sourceTree = "<group>"; };
 		A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -71,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70F498D1CFFFC790062DBB8 /* AVFoundation.framework in Frameworks */,
-				477D44890EECD41610AF1F29 /* libPods-MarksheetReader.a in Frameworks */,
+				E526FCED82F6931ABD222FE7 /* Pods_MarksheetReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +101,7 @@
 				A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */,
 				A7696D2C1CF8599300EC3F14 /* opencv2 */,
 				A7A427C61CF8577100336DB4 /* opencv2.framework */,
-				A371A7538FA2AF356C2756A0 /* libPods-MarksheetReader.a */,
+				42E10EAE0CCBD4D717E4E890 /* Pods_MarksheetReader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 				A7A427971CF6BAD400336DB4 /* Info.plist */,
 				A7A427B91CF70A8300336DB4 /* CameraUtil.swift */,
 				A7A427C21CF822CC00336DB4 /* Detector.mm */,
+				A70F498E1D02C6600062DBB8 /* ChartViewController.swift */,
 			);
 			path = MarksheetReader;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */,
 				A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */,
 				A7A427C31CF822CC00336DB4 /* Detector.mm in Sources */,
+				A70F498F1D02C6600062DBB8 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 /* Begin XCBuildConfiguration section */
 		A7A427AE1CF6BAD400336DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -460,6 +465,7 @@
 		};
 		A7A427AF1CF6BAD400336DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -548,6 +554,7 @@
 		};
 		A7A427B41CF6BAD400336DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MarksheetReaderTests/Info.plist;
@@ -560,6 +567,7 @@
 		};
 		A7A427B51CF6BAD400336DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MarksheetReaderTests/Info.plist;
@@ -572,6 +580,7 @@
 		};
 		A7A427B71CF6BAD400336DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MarksheetReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -583,6 +592,7 @@
 		};
 		A7A427B81CF6BAD400336DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MarksheetReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
