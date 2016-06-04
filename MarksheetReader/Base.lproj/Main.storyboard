@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,15 +29,22 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="circle_button"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="7iL-iF-Oae">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7iL-iF-Oae" firstAttribute="centerX" secondItem="1jq-eU-k6R" secondAttribute="centerX" id="34W-Z6-kHv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1jq-eU-k6R" secondAttribute="bottom" constant="8" symbolic="YES" id="KnO-EL-dUb"/>
                             <constraint firstItem="Tfc-49-ls1" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Y3l-4c-4c4"/>
+                            <constraint firstItem="7iL-iF-Oae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hml-Pg-vDM"/>
+                            <constraint firstItem="7iL-iF-Oae" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="irE-Lr-iby"/>
                             <constraint firstAttribute="trailing" secondItem="Tfc-49-ls1" secondAttribute="trailing" id="n3V-y3-AIM"/>
                             <constraint firstItem="Tfc-49-ls1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qBX-KT-sbY"/>
                             <constraint firstItem="Tfc-49-ls1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="taD-Xt-NMB"/>
                             <constraint firstItem="1jq-eU-k6R" firstAttribute="centerX" secondItem="Tfc-49-ls1" secondAttribute="centerX" id="udT-ks-ReQ"/>
+                            <constraint firstItem="7iL-iF-Oae" firstAttribute="centerY" secondItem="Tfc-49-ls1" secondAttribute="centerY" id="wyi-Nk-lDg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -51,5 +59,6 @@
     </scenes>
     <resources>
         <image name="circle_button" width="292" height="292"/>
+        <image name="frame" width="454" height="756"/>
     </resources>
 </document>

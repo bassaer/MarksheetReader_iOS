@@ -8,7 +8,8 @@
 
 #import "MarksheetReader-Bridging-Header.h"
 #import <opencv2/opencv.hpp>
-#import <opencv2/highgui/ios.h>
+#import <opencv2/imgcodecs/ios.h>
+//#import <opencv2/highgui/ios.h>
 //#import <opencv2/highgui/highgui.hpp>
 
 @interface Detector()
@@ -17,7 +18,7 @@
 }
 - (cv::Mat)convertUIImageToMat:(UIImage *)image;
 - (cv::Mat)getBinaryImage:(cv::Mat) mat;
-- (cv::Mat)changeOrientation:(cv::Mat) mat angle:(double)angle;
+- (cv::Mat)changeOrientation:(cv::Mat) mat;
 @end
 
 @implementation Detector: NSObject
@@ -95,6 +96,7 @@
 
 - (cv::Mat)getBinaryImage:(cv::Mat) mat {
     cv::cvtColor(mat, mat, CV_BGR2GRAY);
+    cv::threshold(mat, mat, 0, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
     //cv::adaptiveThreshold(mat, mat, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 7, 8);
     
     return mat;
@@ -126,14 +128,70 @@
     double min_val, max_val;
     cv::Point min_loc, max_loc;
     cv::minMaxLoc(resultImg, &min_val, &max_val, &min_loc, &max_loc);
+//    cv::threshold(resultImg, resultImg, 0.7, 1.0, cv::THRESH_TOZERO);
     resultImg = [self convertUIImageToMat:cameraImage];
     resultImg = [self changeOrientation:resultImg];
-    cv::rectangle(resultImg , max_loc, cv::Point(max_loc.x + tmpImg.cols, max_loc.y + tmpImg.rows), CV_RGB(0,255,0), 2);
+//    for(int i=0;i<resultImg.rows;i++){
+//        for(int j=0;j<resultImg.cols;j++){
+//            if(resultImg.at<float>(i,j) > 0){
+//                cv::rectangle(resultImg , cv::Point(j,i), cv::Point(j + tmpImg.cols, i + tmpImg.rows), CV_RGB(0,255,0), 2);
+//            }
+//        }
+//    }
+    //cv::rectangle(resultImg , max_loc, cv::Point(max_loc.x + tmpImg.cols, max_loc.y + tmpImg.rows), CV_RGB(0,255,0), 2);
+    cv::rectangle(resultImg , max_loc, cv::Point(max_loc.x + tmpImg.cols, max_loc.y + tmpImg.rows), CV_RGB(0,255,0), 3);
     
     resultImg = [self changeOrientation:resultImg];
     
     return MatToUIImage(resultImg);
     
+}
+
+- (UIImage *)doMachingShape:(UIImage *)cameraImage templateImage:(UIImage *)templateImage {
+    double threshold = 0.001;
+    cv::Mat camera = [self getBinaryImage:[self convertUIImageToMat:cameraImage]];
+    cv::Mat tmpImg = [self getBinaryImage:[self convertUIImageToMat:templateImage]];
+    
+    cv::morphologyEx(camera, camera, cv::MORPH_OPEN,cv::Mat(), cv::Point(-1, -1), 2);
+    cv::morphologyEx(tmpImg, tmpImg, cv::MORPH_OPEN,cv::Mat(), cv::Point(-1, -1), 2);
+    
+    cv::Mat labels;
+    cv::Mat stats;
+    cv::Mat centroids;
+    
+    int nlanels = cv::connectedComponentsWithStats(camera, labels, stats, centroids);
+    
+    cv::Mat roiImg;
+    cv::cvtColor(camera, roiImg, CV_GRAY2BGR);
+    std::vector<cv::Rect> roiRects;
+    
+    for(int i=1; i<nlanels;i++){
+        int *param = stats.ptr<int>(i);
+        int x = param[cv::ConnectedComponentsTypes::CC_STAT_LEFT];
+        int y = param[cv::ConnectedComponentsTypes::CC_STAT_TOP];
+        int height = param[cv::ConnectedComponentsTypes::CC_STAT_HEIGHT];
+        int width = param[cv::ConnectedComponentsTypes::CC_STAT_WIDTH];
+        roiRects.push_back(cv::Rect(x, y, width, height));
+        cv::rectangle(roiImg, roiRects.at(i-1), cv::Scalar(0, 255, 0), 2);
+    }
+    
+    cv::Mat dst = [self convertUIImageToMat:cameraImage];
+    double min = 1;
+    for(int i=1; i< nlanels; i++) {
+        cv::Mat roi = camera(roiRects.at(i-1));
+        double similarity = cv::matchShapes(tmpImg, roi, CV_CONTOURS_MATCH_I1, 0);
+        
+        if(similarity < threshold){
+            cv::rectangle(dst, roiRects.at(i-1), cv::Scalar(0, 255, 0), 3);
+            if(min > similarity){
+                min = similarity;
+                std::printf("%f\n",similarity);
+            }
+            
+        }
+    }
+    
+    return MatToUIImage(dst);
 }
 
 @end

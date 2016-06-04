@@ -22,6 +22,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let patternImage = UIImage(named: "pattern")
     let patternImage2 = UIImage(named: "pattern_part1_2")
     let marksheetImage = UIImage(named: "mark_sheet")
+    let patternImageA = UIImage(named: "pattern_a")
+    let patternImageB = UIImage(named: "pattern_b")
+    let patternImage42 = UIImage(named: "pattern_42")
+    let patternImagePart1 = UIImage(named: "pattern_part1")
+    let patternImageBrank = UIImage(named: "brank")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +104,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             //var image = self.marksheetImage
             if self.shutterButton.highlighted {
                 //image = self.detector.recognizeFace(image)
-                image = self.detector.matchImage(image, templateImage: self.patternImage)
+                //image = self.detector.matchImage(image, templateImage: self.patternImageA)
+                image = self.detector.doMachingShape(image, templateImage: self.patternImageBrank)
                 //image = UIImage(CGImage: image.CGImage!, scale: 1.0, orientation: UIImageOrientation.Right)
             }
             self.imageView.image = image
