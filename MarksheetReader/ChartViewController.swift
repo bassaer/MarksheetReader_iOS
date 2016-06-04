@@ -20,11 +20,15 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var readingRangeLabel: UILabel!
     @IBOutlet weak var totalRangeLabel: UILabel!
     
+    var launchScreenLabel: UILabel!
+    
     
     private var parts: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setLaunchScreen()
         
         parts = ["Part1", "Part2", "Part3", "Part4", "Part5", "Part6", "Part7"]
         let scores = [0.8, 0.22, 0.5, 0.9, 1, 0.19, 0.78]
@@ -41,6 +45,45 @@ class ChartViewController: UIViewController {
         setChart(parts, values: scores)
         
         setScores()
+        
+    }
+    
+    func setLaunchScreen(){
+        let screenWidth = UIScreen.mainScreen().nativeBounds.width
+        let screenHeight = UIScreen.mainScreen().nativeBounds.height
+        
+        self.launchScreenLabel = UILabel(frame: CGRectMake(0,0,screenWidth,screenHeight))
+        self.launchScreenLabel.backgroundColor = UIColor(red: 0, green: CGFloat(80)/255.0, blue: CGFloat(127)/255.0, alpha: 1.0)
+        self.launchScreenLabel.text = "R"
+        self.launchScreenLabel.textColor = UIColor.whiteColor()
+        self.launchScreenLabel.font = UIFont(name: "Avenir-Black",size: 200)
+        self.launchScreenLabel.center = self.view.center
+        self.launchScreenLabel.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(self.launchScreenLabel)
+        
+    }
+ 
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(
+            0.3,
+            delay: 1.0,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: { () in
+                self.launchScreenLabel.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            },
+            completion: { (Bool) in }
+        )
+        
+        UIView.animateWithDuration(
+            0.2,
+            delay: 1.3,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: { () in
+                self.launchScreenLabel.transform = CGAffineTransformMakeScale(1.2, 1.2)
+                self.launchScreenLabel.alpha = 0
+            },
+            completion: { (Bool) in }
+        )
         
     }
     

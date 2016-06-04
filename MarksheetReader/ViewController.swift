@@ -28,12 +28,55 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let patternImagePart1 = UIImage(named: "pattern_part1")
     let patternImageBrank = UIImage(named: "brank")
     
+    var launchScreenLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setLaunchScreen()
         
         if initCamera() {
             mySession.startRunning()
         }
+    }
+    
+    func setLaunchScreen(){
+        let screenWidth = UIScreen.mainScreen().nativeBounds.width
+        let screenHeight = UIScreen.mainScreen().nativeBounds.height
+        
+        self.launchScreenLabel = UILabel(frame: CGRectMake(0,0,screenWidth,screenHeight))
+        self.launchScreenLabel.backgroundColor = UIColor(red: 0, green: CGFloat(80)/255.0, blue: CGFloat(127)/255.0, alpha: 1.0)
+        self.launchScreenLabel.text = "R"
+        self.launchScreenLabel.textColor = UIColor.whiteColor()
+        self.launchScreenLabel.font = UIFont(name: "Avenir-Black",size: 200)
+        self.launchScreenLabel.center = self.view.center
+        self.launchScreenLabel.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(self.launchScreenLabel)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(
+            0.3,
+            delay: 1.0,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: { () in
+                self.launchScreenLabel.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            },
+            completion: { (Bool) in }
+        )
+        
+        UIView.animateWithDuration(
+            0.8,
+            delay: 1.3,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: { () in
+                self.launchScreenLabel.transform = CGAffineTransformMakeScale(1.2, 1.2)
+                self.launchScreenLabel.alpha = 0
+            },
+            completion: { (Bool) in }
+        )
+        
     }
 
     override func didReceiveMemoryWarning() {

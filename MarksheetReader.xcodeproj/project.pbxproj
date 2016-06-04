@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A70F498D1CFFFC790062DBB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */; };
 		A70F498F1D02C6600062DBB8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F498E1D02C6600062DBB8 /* ChartViewController.swift */; };
+		A70F49971D0339250062DBB8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F49961D0339250062DBB8 /* LaunchScreenController.swift */; };
 		A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */; };
 		A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278D1CF6BAD400336DB4 /* ViewController.swift */; };
 		A7A427911CF6BAD400336DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A4278F1CF6BAD400336DB4 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		75ABDAC0C162E87CF86F2B99 /* Pods-MarksheetReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.debug.xcconfig"; sourceTree = "<group>"; };
 		7D1ED966CCAB5102F1E0BB86 /* Pods-MarksheetReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarksheetReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarksheetReader/Pods-MarksheetReader.release.xcconfig"; sourceTree = "<group>"; };
 		A70F498E1D02C6600062DBB8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A70F49961D0339250062DBB8 /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		A7696D2C1CF8599300EC3F14 /* opencv2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv2; path = Pods/OpenCV/opencv2.framework/Versions/A/opencv2; sourceTree = "<group>"; };
 		A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 		A7A4278A1CF6BAD400336DB4 /* MarksheetReader */ = {
 			isa = PBXGroup;
 			children = (
+				A70F49961D0339250062DBB8 /* LaunchScreenController.swift */,
 				A7A427C51CF8233400336DB4 /* MarksheetReader-Bridging-Header.h */,
 				A7A427BB1CF81E2600336DB4 /* haarcascade_frontalface_alt.xml */,
 				A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */,
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70F49971D0339250062DBB8 /* LaunchScreenController.swift in Sources */,
 				A7A427BA1CF70A8300336DB4 /* CameraUtil.swift in Sources */,
 				A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */,
 				A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */,
