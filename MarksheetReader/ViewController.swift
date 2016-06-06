@@ -8,11 +8,13 @@
 
 import UIKit
 import AVFoundation
+import MRProgress
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var shutterButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
     
     var mySession : AVCaptureSession!
     var myDevice : AVCaptureDevice!
@@ -30,6 +32,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     var launchScreenLabel: UILabel!
     
+    var mrprogress: MRProgressOverlayView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +43,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             mySession.startRunning()
         }
     }
+    
     
     func setLaunchScreen(){
         let screenWidth = UIScreen.mainScreen().nativeBounds.width
@@ -55,6 +60,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
+    @IBAction func pushedShutterButton(sender: UIButton) {
+        mrprogress = MRProgressOverlayView()
+        
+    }
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(
             0.3,
@@ -77,11 +86,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             completion: { (Bool) in }
         )
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func initCamera() -> Bool {
@@ -145,7 +149,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         dispatch_sync(dispatch_get_main_queue(), {
             var image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
             //var image = self.marksheetImage
-            if self.shutterButton.highlighted {
+            if self.settingButton.highlighted {
                 //image = self.detector.recognizeFace(image)
                 //image = self.detector.matchImage(image, templateImage: self.patternImageA)
                 image = self.detector.doMachingShape(image, templateImage: self.patternImageBrank)
@@ -153,6 +157,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             }
             self.imageView.image = image
         })
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
  
 

@@ -28,14 +28,12 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setLaunchScreen()
-        
         parts = ["Part1", "Part2", "Part3", "Part4", "Part5", "Part6", "Part7"]
-        let scores = [0.8, 0.22, 0.5, 0.9, 1, 0.19, 0.78]
+        let scores = [0.82, 0.96, 0.7, 0.9, 1, 0.8, 0.78]
         
         radarChartView.animate(yAxisDuration: 2.0)
         radarChartView.drawWeb = true
-        radarChartView.descriptionText = "April 2016"
+        radarChartView.descriptionText = ""
         radarChartView.webAlpha = CGFloat(1.0)
         radarChartView.yAxis.drawLabelsEnabled = false
         radarChartView.yAxis.axisMaxValue = 1
@@ -45,45 +43,6 @@ class ChartViewController: UIViewController {
         setChart(parts, values: scores)
         
         setScores()
-        
-    }
-    
-    func setLaunchScreen(){
-        let screenWidth = UIScreen.mainScreen().nativeBounds.width
-        let screenHeight = UIScreen.mainScreen().nativeBounds.height
-        
-        self.launchScreenLabel = UILabel(frame: CGRectMake(0,0,screenWidth,screenHeight))
-        self.launchScreenLabel.backgroundColor = UIColor(red: 0, green: CGFloat(80)/255.0, blue: CGFloat(127)/255.0, alpha: 1.0)
-        self.launchScreenLabel.text = "R"
-        self.launchScreenLabel.textColor = UIColor.whiteColor()
-        self.launchScreenLabel.font = UIFont(name: "Avenir-Black",size: 200)
-        self.launchScreenLabel.center = self.view.center
-        self.launchScreenLabel.textAlignment = NSTextAlignment.Center
-        self.view.addSubview(self.launchScreenLabel)
-        
-    }
- 
-    override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(
-            0.3,
-            delay: 1.0,
-            options: UIViewAnimationOptions.CurveEaseOut,
-            animations: { () in
-                self.launchScreenLabel.transform = CGAffineTransformMakeScale(0.9, 0.9)
-            },
-            completion: { (Bool) in }
-        )
-        
-        UIView.animateWithDuration(
-            0.2,
-            delay: 1.3,
-            options: UIViewAnimationOptions.CurveEaseInOut,
-            animations: { () in
-                self.launchScreenLabel.transform = CGAffineTransformMakeScale(1.2, 1.2)
-                self.launchScreenLabel.alpha = 0
-            },
-            completion: { (Bool) in }
-        )
         
     }
     
@@ -97,7 +56,7 @@ class ChartViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "Score")
+        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "April 2016")
         chartDataSet.colors = [NSUIColor.orangeColor()]
         chartDataSet.drawFilledEnabled = true
         chartDataSet.fillColor = NSUIColor.orangeColor()

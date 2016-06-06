@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MRProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MarksheetReader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,7 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>993CE2513B24EDB3669BA50875BF2257</key>
+		<key>089EA7EF87E430B5084668F7C3F7BB6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CAAB2A1855182D992E2945796B03B4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
