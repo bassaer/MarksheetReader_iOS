@@ -187,7 +187,6 @@
                 min = similarity;
                 std::printf("%f\n",similarity);
             }
-            
         }
     }
     

@@ -7,23 +7,36 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let colorKey = UIColor.whiteColor()
+        let colorBg = ColorManager().mainColor()
+        
+        UITabBar.appearance().tintColor = colorKey
+        UITabBar.appearance().barTintColor = colorBg
+        
+        tabBar.items![0].image = UIImage.fontAwesomeIconWithName(.PieChart, textColor: UIColor.whiteColor(), size: CGSizeMake(40,40))
+        tabBar.items![0].title = "Score"
+        tabBar.items![1].image = UIImage.fontAwesomeIconWithName(.PencilSquareO, textColor: UIColor.whiteColor(), size: CGSizeMake(40,40))
+        tabBar.items![1].title = "Mark"
+        tabBar.items![2].image = UIImage.fontAwesomeIconWithName(.Database, textColor: UIColor.whiteColor(), size: CGSizeMake(40,40))
+        tabBar.items![2].title = "Data"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
     }
     
-    @IBAction func tappedDoneButton(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+    
 
     /*
     // MARK: - Navigation

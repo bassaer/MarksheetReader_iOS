@@ -13,6 +13,7 @@ class ChartViewController: UIViewController {
 
     @IBOutlet weak var radarChartView: RadarChartView!
     
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var listeningScoreLabel: UILabel!
     @IBOutlet weak var readingScoreLabel: UILabel!
     @IBOutlet weak var totalScoreLabel: UILabel!
@@ -22,14 +23,13 @@ class ChartViewController: UIViewController {
     
     var launchScreenLabel: UILabel!
     
-    
     private var parts: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         parts = ["Part1", "Part2", "Part3", "Part4", "Part5", "Part6", "Part7"]
-        let scores = [0.82, 0.96, 0.7, 0.9, 1, 0.8, 0.78]
+        let scores = [0.82, 0.86, 0.7, 0.9, 1, 0.8, 0.78]
         
         radarChartView.animate(yAxisDuration: 2.0)
         radarChartView.drawWeb = true
@@ -38,12 +38,40 @@ class ChartViewController: UIViewController {
         radarChartView.yAxis.drawLabelsEnabled = false
         radarChartView.yAxis.axisMaxValue = 1
         radarChartView.yAxis.axisMinValue = 0
-        radarChartView.layer.borderColor = UIColor.grayColor().CGColor
+        radarChartView.layer.borderColor = UIColor.whiteColor().CGColor
+        radarChartView.backgroundColor = UIColor.clearColor()
+        radarChartView.webColor = NSUIColor.whiteColor()
+        radarChartView.innerWebColor = NSUIColor.whiteColor()
+        radarChartView.yAxis.labelTextColor = NSUIColor.whiteColor()
+        radarChartView.xAxis.labelTextColor = NSUIColor.whiteColor()
         
         setChart(parts, values: scores)
         
         setScores()
         
+        setBackgroundImage()
+        
+    }
+    
+    func setBackgroundImage() {
+        self.bgImage.image = UIImage(named: "business")
+        self.bgImage.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        let imageView = UIImageView()
+        imageView.frame = self.bgImage.bounds
+        imageView.backgroundColor = ColorManager().clearGrayColor()
+        self.bgImage.addSubview(imageView)
+        
+        let blurEffect = UIBlurEffect(style: .Light)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = self.bgImage.bounds
+        self.bgImage.addSubview(visualEffectView)
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //self.navigationItem.title = "Score"
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
@@ -60,6 +88,8 @@ class ChartViewController: UIViewController {
         chartDataSet.colors = [NSUIColor.orangeColor()]
         chartDataSet.drawFilledEnabled = true
         chartDataSet.fillColor = NSUIColor.orangeColor()
+        chartDataSet.fillAlpha = 0.8
+        chartDataSet.valueColors = [NSUIColor.greenColor()]
         //chartDataSet.drawValuesEnabled = false
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.PercentStyle

@@ -11,6 +11,11 @@
 		A70F498F1D02C6600062DBB8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F498E1D02C6600062DBB8 /* ChartViewController.swift */; };
 		A70F49971D0339250062DBB8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F49961D0339250062DBB8 /* LaunchScreenController.swift */; };
 		A70F49991D035B9B0062DBB8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F49981D035B9B0062DBB8 /* TabBarController.swift */; };
+		A71E04411D087E270081E2AA /* FontAwesome_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71E04401D087E270081E2AA /* FontAwesome_swift.framework */; };
+		A71E04431D087E2C0081E2AA /* MRProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71E04421D087E2C0081E2AA /* MRProgress.framework */; };
+		A71E04451D087E300081E2AA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71E04441D087E300081E2AA /* Charts.framework */; };
+		A71E04471D0883840081E2AA /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E04461D0883840081E2AA /* ColorManager.swift */; };
+		A71E044B1D08869C0081E2AA /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E044A1D08869C0081E2AA /* MarkViewController.swift */; };
 		A7A4278C1CF6BAD400336DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278B1CF6BAD400336DB4 /* AppDelegate.swift */; };
 		A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4278D1CF6BAD400336DB4 /* ViewController.swift */; };
 		A7A427911CF6BAD400336DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A4278F1CF6BAD400336DB4 /* Main.storyboard */; };
@@ -47,6 +52,11 @@
 		A70F498E1D02C6600062DBB8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A70F49961D0339250062DBB8 /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		A70F49981D035B9B0062DBB8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A71E04401D087E270081E2AA /* FontAwesome_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome_swift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MarksheetReader-dwckolftnicswqgujezgrckjzvhb/Build/Products/Debug-iphoneos/FontAwesome.swift/FontAwesome_swift.framework"; sourceTree = "<group>"; };
+		A71E04421D087E2C0081E2AA /* MRProgress.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MRProgress.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MarksheetReader-dwckolftnicswqgujezgrckjzvhb/Build/Products/Debug-iphoneos/MRProgress/MRProgress.framework"; sourceTree = "<group>"; };
+		A71E04441D087E300081E2AA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MarksheetReader-dwckolftnicswqgujezgrckjzvhb/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
+		A71E04461D0883840081E2AA /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		A71E044A1D08869C0081E2AA /* MarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
 		A7696D2C1CF8599300EC3F14 /* opencv2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv2; path = Pods/OpenCV/opencv2.framework/Versions/A/opencv2; sourceTree = "<group>"; };
 		A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -76,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71E04451D087E300081E2AA /* Charts.framework in Frameworks */,
+				A71E04431D087E2C0081E2AA /* MRProgress.framework in Frameworks */,
+				A71E04411D087E270081E2AA /* FontAwesome_swift.framework in Frameworks */,
 				A70F498D1CFFFC790062DBB8 /* AVFoundation.framework in Frameworks */,
 				E526FCED82F6931ABD222FE7 /* Pods_MarksheetReader.framework in Frameworks */,
 			);
@@ -101,6 +114,9 @@
 		335F888E145D63C3575045D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A71E04441D087E300081E2AA /* Charts.framework */,
+				A71E04421D087E2C0081E2AA /* MRProgress.framework */,
+				A71E04401D087E270081E2AA /* FontAwesome_swift.framework */,
 				A7696D301CF85CD500EC3F14 /* AssetsLibrary.framework */,
 				A7696D2E1CF85CCD00EC3F14 /* AVFoundation.framework */,
 				A7696D2C1CF8599300EC3F14 /* opencv2 */,
@@ -148,6 +164,8 @@
 				A7A427C21CF822CC00336DB4 /* Detector.mm */,
 				A70F498E1D02C6600062DBB8 /* ChartViewController.swift */,
 				A70F49981D035B9B0062DBB8 /* TabBarController.swift */,
+				A71E04461D0883840081E2AA /* ColorManager.swift */,
+				A71E044A1D08869C0081E2AA /* MarkViewController.swift */,
 			);
 			path = MarksheetReader;
 			sourceTree = "<group>";
@@ -363,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71E044B1D08869C0081E2AA /* MarkViewController.swift in Sources */,
 				A70F49971D0339250062DBB8 /* LaunchScreenController.swift in Sources */,
 				A7A427BA1CF70A8300336DB4 /* CameraUtil.swift in Sources */,
 				A7A4278E1CF6BAD400336DB4 /* ViewController.swift in Sources */,
@@ -370,6 +389,7 @@
 				A70F49991D035B9B0062DBB8 /* TabBarController.swift in Sources */,
 				A7A427C31CF822CC00336DB4 /* Detector.mm in Sources */,
 				A70F498F1D02C6600062DBB8 /* ChartViewController.swift in Sources */,
+				A71E04471D0883840081E2AA /* ColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,4 +4,5 @@ target 'MarksheetReader' do
 pod 'OpenCV', '3.0.0'
 pod 'Charts'
 pod 'MRProgress'
+pod 'FontAwesome.swift'
 end

@@ -32,8 +32,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     var launchScreenLabel: UILabel!
     
-    var mrprogress: MRProgressOverlayView!
+    var counter:Float = 0
     
+    var mrprogress: MRProgressOverlayView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +43,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         if initCamera() {
             mySession.startRunning()
         }
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @IBAction func pushedShutterButton(sender: UIButton) {
+        loadScore()
     }
     
     
@@ -50,7 +61,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let screenHeight = UIScreen.mainScreen().nativeBounds.height
         
         self.launchScreenLabel = UILabel(frame: CGRectMake(0,0,screenWidth,screenHeight))
-        self.launchScreenLabel.backgroundColor = UIColor(red: 0, green: CGFloat(80)/255.0, blue: CGFloat(127)/255.0, alpha: 1.0)
+        self.launchScreenLabel.backgroundColor = ColorManager().mainColor()
         self.launchScreenLabel.text = "R"
         self.launchScreenLabel.textColor = UIColor.whiteColor()
         self.launchScreenLabel.font = UIFont(name: "Avenir-Black",size: 200)
@@ -60,9 +71,48 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
-    @IBAction func pushedShutterButton(sender: UIButton) {
-        mrprogress = MRProgressOverlayView()
+    func loadScore() {
+        showProgressBar()
+//        let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//        for i in 1...7 {
+//            dispatch_sync(queue) {() -> Void in
+//                self.updatePregress(i)
+//                usleep(1000)
+//            }
+//        }
+        NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateProgress(_:)), userInfo: nil, repeats: true)
         
+    }
+    
+    func updateProgress(timer: NSTimer) {
+        if(mrprogress == nil){return}
+        if(mrprogress.progress >= 1.0 ){
+            mrprogress.hide(true)
+            timer.invalidate()
+            showNextNavigationView()
+            counter = 0
+        }else{
+            counter += 1.0
+            mrprogress.setProgress(counter/7, animated: true)
+            mrprogress.titleLabelText = "Loading part" + Int(counter).description + "..."
+        }
+    }
+    
+    func showNextNavigationView(){
+        let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController")
+        navigationController?.pushViewController(nextView!, animated: true)
+    }
+    
+    func showProgressBar() {
+        mrprogress = MRProgressOverlayView()
+        mrprogress.titleLabelText = "Loading..."
+        mrprogress.mode = MRProgressOverlayViewMode.DeterminateCircular
+        
+        let progress = MRCircularProgressView()
+        progress.progress = 0
+        mrprogress.modeView = progress
+        self.view.addSubview(mrprogress)
+        mrprogress.show(true)
     }
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(
